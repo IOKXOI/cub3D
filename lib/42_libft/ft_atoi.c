@@ -32,9 +32,9 @@ int    ft_atoi(const char *str)
         return (-1);
     while (*str >= '0' && *str <= '9')
         nb = nb * 10 + (*(str)++ - 48);
-    while (*str++)
+    while (*str)
     {
-        if (*str != ' ' && *str != '\n')
+        if (*str != ' ' && *str++ != '\n')
             return (-1);
     }
     return (sign * nb);
