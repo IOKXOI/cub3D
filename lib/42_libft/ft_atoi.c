@@ -34,8 +34,9 @@ int    ft_atoi(const char *str)
         nb = nb * 10 + (*(str)++ - 48);
     while (*str)
     {
-        if (*str != ' ' && *str++ != '\n')
+        if (*str != ' ' && *str != '\n')
             return (-1);
+        str++;
     }
     return (sign * nb);
 }
