@@ -15,8 +15,8 @@
 
 # include "includes.h"
 # include "struct.h"
-# include "/lib/minilibx/mlx.h"
-# include "/lib/42_libft/libft.h"
+# include "../lib/minilibx/mlx.h"
+# include "../lib/42_libft/libft.h"
 
 /* -------------------------------------------------------------------------- */
 /*                                  PARSING                                   */
