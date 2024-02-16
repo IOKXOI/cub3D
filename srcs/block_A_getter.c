@@ -96,7 +96,7 @@ int	block_a_getter_textures_colors(t_data *data)
 		line = get_next_line(data->fd);
 		data->map_start++;
 	}
-	if (!block_a_getter_is_full(data))
-			return (0);
-	return (1);
+	if (block_a_getter_is_full(data))
+			return (1);
+	return (0);
 }

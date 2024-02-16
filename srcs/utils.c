@@ -86,10 +86,12 @@ char	*ft_get_textures_name(char *line)
 	int		i;
 
 	i = 0;
+	if (!*line)
+		return (NULL);
 	name = malloc(sizeof(char) * ft_strlen_no_space(line) + 1);
 	if (!name)
 		return (NULL);
-	while (line[i] != '\n' && line[i] != ' ')
+	while (line[i] != '\n' && line[i] != ' ' && line[i] != '\0')
 	{
 		name[i] = line[i];
 		i++;
