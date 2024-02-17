@@ -49,7 +49,7 @@ $(NAME)	:	$(OBJ) $(LIBS)
 $(OBJ_DIR)/%.o 		:	$(SRC_DIR)/%.c $(INCLUDES)
 									@printf "\033[0;33m Generating cub3d object... %-38.38s \r" $@
 									@mkdir -p $(OBJ_DIR)
-									@$(CC) -Wall -Wextra -Werror -gdwarf-4 -c -I $(INCLUDES_DIR) $< -o $@
+									@$(CC) -Wall -Wextra -Werror -g3 -c -I $(INCLUDES_DIR) $< -o $@
 
 clean	:
 					rm -rf $(OBJ_DIR)
