@@ -43,9 +43,17 @@ static void	block_a_getter_set_data(char *line, t_data *data)
 	else if (line[0] == 'W' && line[1] == 'E')
 		check_texture(line, data, &(data->we_texture));
 	else if (line[0] == 'F')
+	{
+		if (data->c_floor != -1)
+			clear_exit_parsing(data, "Invalid map format\n");
 		data->c_floor = block_a_checker_get_colors(line, data);
+	}
 	else if (line[0] == 'C')
+	{
+		if (data->c_ceiling != -1)
+			clear_exit_parsing(data, "Invalid map format\n");
 		data->c_ceiling = block_a_checker_get_colors(line, data);
+	}
 	free(line);
 }
 
