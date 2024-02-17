@@ -51,9 +51,9 @@ static char	*extract_str(char *buffer, ssize_t *new_line)
 	size_t	i;
 
 	i = 0;
-	while (buffer[i] != '\n' && buffer[i + 1] != '\0')
+	while (*(buffer + (i + 1)) && *(buffer + i) != '\n')
 		i++;
-	if (buffer[i] == '\n' && buffer[i + 1] != '\0')
+	if (*(buffer + i) == '\n')
 		*new_line = TRUE;
 	extracted = ft_strndup(buffer, i);
 	if (!extracted)
