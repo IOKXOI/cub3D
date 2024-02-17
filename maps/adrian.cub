@@ -17,13 +17,14 @@
 
 
 
-F 255jhin,255,51
-C 255 , 0,0
+F 255,255,51
+C 0, 0,0
+C 0, 0,0
 
 WE                                                 textures/sisi.xpm
 SO textures/griffith.xpm
 EA textures/void.xpm
-NO textures/guts.xpm
+NO textures/guts.xpm           
 
 11111111111111111111111
 1000000000010000000001

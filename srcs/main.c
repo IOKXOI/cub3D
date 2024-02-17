@@ -6,7 +6,7 @@
 /*   By: sydauria <sydauria@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/07 19:07:00 by tschecro          #+#    #+#             */
-/*   Updated: 2024/02/17 15:51:13 by tschecro         ###   ########.fr       */
+/*   Updated: 2024/02/17 17:17:25 by tschecro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,6 @@ bool	parsing(t_data *data, char *map_name)
 	}
 	if (!block_b_getter_array(data))
 	{
-		printf("c'est wuuu\n");
 		printf("Error\nMap is invalid.\n");
 		return (0);
 	}
