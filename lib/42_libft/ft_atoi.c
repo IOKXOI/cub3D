@@ -13,30 +13,30 @@
 #include "libft.h"
 #include <stdio.h>
 
-int    ft_atoi(const char *str)
+int	ft_atoi(const char *str)
 {
-    size_t    nb;
-    int        sign;
+	size_t	nb;
+	int		sign;
 
-    nb = 0;
-    sign = 1;
-    while (*str == ' ')
-        str++;
-    if (*str == '+' || *str == '-')
-    {
-        if (*str == '-')
-            sign *= -1;
-        str++;
-    }
-    if (*str < '0' || *str > '9')
-        return (-1);
-    while (*str >= '0' && *str <= '9')
-        nb = nb * 10 + (*(str)++ - 48);
-    while (*str)
-    {
-        if (*str != ' ' && *str != '\n')
-            return (-1);
-        str++;
-    }
-    return (sign * nb);
+	nb = 0;
+	sign = 1;
+	while (*str == ' ')
+		str++;
+	if (*str == '+' || *str == '-')
+	{
+		if (*str == '-')
+			sign *= -1;
+		str++;
+	}
+	if (*str < '0' || *str > '9')
+		return (-1);
+	while (*str >= '0' && *str <= '9')
+		nb = nb * 10 + (*(str)++ - 48);
+	while (*str)
+	{
+		if (*str != ' ' && *str != '\n')
+			return (-1);
+		str++;
+	}
+	return (sign * nb);
 }
