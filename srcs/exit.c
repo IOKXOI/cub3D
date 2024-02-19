@@ -6,7 +6,7 @@
 /*   By: sydauria <sydauria@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/27 00:23:44 by greengo           #+#    #+#             */
-/*   Updated: 2024/02/08 12:47:51 by sydauria         ###   ########.fr       */
+/*   Updated: 2024/02/19 12:49:05 by sydauria         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,4 +45,11 @@ void	clear_exit_parsing(t_data *data, char *error_message)
 		perror(error_message);
 	destroy(data);
 	exit(EXIT_FAILURE);
+}
+
+void	free_line_print_error_clean(t_data *data, char *line)
+{
+	free(line);
+	printf("Error\nMap format is not standard.");
+	clear_exit_parsing(data, "");
 }

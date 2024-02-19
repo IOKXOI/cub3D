@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   raycasting.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tschecro <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: sydauria <sydauria@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/07 17:05:41 by tschecro          #+#    #+#             */
-/*   Updated: 2024/02/17 16:34:35 by tschecro         ###   ########.fr       */
+/*   Updated: 2024/02/19 12:42:35 by sydauria         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -87,7 +87,6 @@ void	dda_alg(t_data *data, t_r_cast *values)
 			values->map_y += values->stepy;
 			data->side = 1;
 		}
-	//	dprintf(2, "x : %d\n y: %d\n", values->map_x, values->map_y);
 		if (data->map[values->map_x][values->map_y] == '1')
 			values->hit = 1;
 	}

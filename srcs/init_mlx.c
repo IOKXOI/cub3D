@@ -6,7 +6,7 @@
 /*   By: sydauria <sydauria@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/08 12:35:06 by sydauria          #+#    #+#             */
-/*   Updated: 2024/02/13 19:10:56 by sydauria         ###   ########.fr       */
+/*   Updated: 2024/02/19 12:43:32 by sydauria         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,13 +51,6 @@ bool	init_mlx(t_data *data)
 		data->mlx.w_w = WIN_WIDTH;
 		data->mlx.w_h = WIN_HEIGHT;
 	}
-	// data->mlx.win = mlx_new_window(data->mlx.mlx, data->mlx.w_w, \
-	// 		data->mlx.w_h, "cub3d");
-	// if (!data->mlx.win)
-	// {
-	// 	destroy(data);
-	// 	return (false);
-	// }
 	if (!init_img(data))
 		return (false);
 	return (true);

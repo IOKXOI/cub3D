@@ -6,7 +6,7 @@
 /*   By: sydauria <sydauria@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/27 00:30:16 by greengo           #+#    #+#             */
-/*   Updated: 2024/02/13 18:09:32 by tschecro         ###   ########.fr       */
+/*   Updated: 2024/02/19 12:45:32 by sydauria         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -79,8 +79,9 @@ uint32_t	block_a_checker_get_colors(char *line, t_data *data)
 	else
 	{
 		free_array(values);
-		clear_exit_parsing(data, "Error\nError detected while \
+		printf("Error\nError detected while \
 		colors conversion. Please check the format.\n");
+		clear_exit_parsing(data, "");
 		return (0);
 	}
 }

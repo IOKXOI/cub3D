@@ -6,7 +6,7 @@
 /*   By: sydauria <sydauria@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/07 19:07:00 by tschecro          #+#    #+#             */
-/*   Updated: 2024/02/17 17:17:25 by tschecro         ###   ########.fr       */
+/*   Updated: 2024/02/19 12:53:30 by sydauria         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -77,6 +77,7 @@ int	main(int ac, char **av)
 		destroy(&data);
 		return (false);
 	}
+	swap_exec_data(data)
 	xy_swap(&data);
 	data.rs = 0.78539816339 / 2;
 	data.speed = 0.40;

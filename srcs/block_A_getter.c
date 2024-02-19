@@ -6,7 +6,7 @@
 /*   By: sydauria <sydauria@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/26 22:15:17 by greengo           #+#    #+#             */
-/*   Updated: 2024/02/13 19:54:46 by sydauria         ###   ########.fr       */
+/*   Updated: 2024/02/19 12:50:55 by sydauria         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,21 +45,13 @@ static void	block_a_getter_set_data(char *line, t_data *data)
 	else if (line[0] == 'F')
 	{
 		if (data->c_floor != -1)
-		{
-			free(line);
-			printf("Invalid map format\n");
-			clear_exit_parsing(data, "");
-		}
+			free_line_print_error_clean(data, line);
 		data->c_floor = block_a_checker_get_colors(line, data);
 	}
 	else if (line[0] == 'C')
 	{
 		if (data->c_ceiling != -1)
-		{
-			free(line);
-			printf("Invalid map format\n");
-			clear_exit_parsing(data, "");
-		}
+			free_line_print_error_clean(data, line);
 		data->c_ceiling = block_a_checker_get_colors(line, data);
 	}
 	free(line);
@@ -68,8 +60,8 @@ static void	block_a_getter_set_data(char *line, t_data *data)
 static bool	block_a_getter_is_full(t_data *data)
 {
 	if (data->no_texture.img.img && data->so_texture.img.img && \
-		data->ea_texture.img.img && data->we_texture.img.img && \
-		data->c_ceiling != -1  && data->c_floor != -1)
+	data->ea_texture.img.img && data->we_texture.img.img && \
+	data->c_ceiling != -1 && data->c_floor != -1)
 		return (1);
 	else
 		return (0);
@@ -102,17 +94,13 @@ int	block_a_getter_textures_colors(t_data *data)
 				return (1);
 		}
 		else if (block_a_getter_invalid_line(line))
-		{
-			free(line);
-			printf("Error\nMap format is not standard.");
-			clear_exit_parsing(data, "");
-		}
+			free_line_print_error_clean(data, line);
 		else
 			free(line);
 		line = get_next_line(data->fd);
 		data->map_start++;
 	}
 	if (block_a_getter_is_full(data))
-			return (1);
+		return (1);
 	return (0);
 }
