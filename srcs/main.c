@@ -6,7 +6,7 @@
 /*   By: sydauria <sydauria@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/07 19:07:00 by tschecro          #+#    #+#             */
-/*   Updated: 2024/02/19 13:11:33 by sydauria         ###   ########.fr       */
+/*   Updated: 2024/02/19 13:13:32 by sydauria         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,7 +55,7 @@ int	main(int ac, char **av)
 	ft_bzero(&data, sizeof(t_data));
 	init_parsing_resources(&data);
 	if (!init_mlx(&data))
-		return (0);
+		return (printf("Error\nMLX init failed\n"), 0);
 	if (!parsing(&data, av[1]))
 	{
 		clear_exit_parsing(&data, "");
