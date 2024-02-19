@@ -6,7 +6,7 @@
 /*   By: sydauria <sydauria@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/07 19:07:00 by tschecro          #+#    #+#             */
-/*   Updated: 2024/02/19 13:01:18 by sydauria         ###   ########.fr       */
+/*   Updated: 2024/02/19 13:11:33 by sydauria         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,7 +51,7 @@ int	main(int ac, char **av)
 	t_data	data;
 
 	if (ac != 2)
-		return (0);
+		return (printf("Error\nInvalid argument.\n"), 0);
 	ft_bzero(&data, sizeof(t_data));
 	init_parsing_resources(&data);
 	if (!init_mlx(&data))
