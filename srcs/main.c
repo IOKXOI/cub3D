@@ -6,7 +6,7 @@
 /*   By: sydauria <sydauria@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/07 19:07:00 by tschecro          #+#    #+#             */
-/*   Updated: 2024/02/19 13:13:32 by sydauria         ###   ########.fr       */
+/*   Updated: 2024/02/19 16:28:11 by sydauria         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,6 +30,7 @@ bool	parsing(t_data *data, char *map_name)
 	come_back_to_block_b(data, map_name);
 	duplicate_map(data);
 	get_start_pos(data);
+	check_map_dimension(data);
 	if (!floodfill(data, data->player_pos_x, data->player_pos_y))
 	{
 		printf("Error\nMap is invalid.\n");

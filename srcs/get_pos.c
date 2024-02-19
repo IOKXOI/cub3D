@@ -6,7 +6,7 @@
 /*   By: sydauria <sydauria@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/08 12:18:38 by sydauria          #+#    #+#             */
-/*   Updated: 2024/02/17 15:29:26 by tschecro         ###   ########.fr       */
+/*   Updated: 2024/02/19 16:28:47 by sydauria         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,11 +69,13 @@ void	get_start_pos(t_data *data)
 		x = 0;
 		y++;
 	}
-	if (data->spawn != 1)
-	{
+	if (data->spawn == 1)
+		return ;
+	else if  (data->spawn < 1)
+		printf("Error\nAt least one spawn point accepted.\n");
+	else if (data->spawn > 1)
 		printf("Error\nOnly one spawn point accepted.\n");
-		clear_exit_parsing(data, "");
-	}
+	clear_exit_parsing(data, "");
 }
 
 bool	floodfill(t_data *data, int x, int y)
@@ -93,4 +95,22 @@ bool	floodfill(t_data *data, int x, int y)
 	if (!floodfill(data, x, y - 1))
 		return (0);
 	return (1);
+}
+
+void	check_map_dimension(t_data *data)
+{
+	int	i;
+
+	i = 0;
+	while (i < data->map_height)
+	{
+		if (data->line_size[i] > data->line_size_max)
+			data->line_size_max = data->line_size[i];
+		i++;
+	}
+	if (i >= 200 || data->line_size_max >= 200)
+	{
+		printf("Map not designed for this support. Try smaller size.\n");
+		clear_exit_parsing(data, "");
+	}
 }
