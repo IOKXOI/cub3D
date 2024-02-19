@@ -6,7 +6,7 @@
 /*   By: sydauria <sydauria@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/17 12:52:24 by rmechety          #+#    #+#             */
-/*   Updated: 2024/02/19 12:49:24 by sydauria         ###   ########.fr       */
+/*   Updated: 2024/02/19 12:57:51 by sydauria         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,6 +56,7 @@ void		init_hooks(t_data *data);
 int			rgb_to_int(int r, int g, int b);
 void		ft_bzero(void *ptr, size_t count);
 void		my_mlx_pixel_put(t_data *data, int x, int y, int color);
+void		init_exec_data(t_data *data);
 /* -------------------------------------------------------------------------- */
 /*                     FILE = Cub3d/srcs/set_background.c                     */
 /* -------------------------------------------------------------------------- */
