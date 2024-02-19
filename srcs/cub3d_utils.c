@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   cub3d_utils.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tschecro <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: sydauria <sydauria@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/07 18:26:41 by tschecro          #+#    #+#             */
-/*   Updated: 2024/02/07 18:26:43 by tschecro         ###   ########.fr       */
+/*   Updated: 2024/02/19 12:59:37 by sydauria         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,4 +41,22 @@ void	my_mlx_pixel_put(t_data *data, int x, int y, int color)
 		pixel_addr = ((int *)(data->img.addr)
 				+ ((y << 10) + (y << 9) + (y << 8) + (y << 7) + x));
 	*pixel_addr = color;
+}
+
+static void	xy_swap(t_data *data)
+{
+	float	x;
+
+	x = data->player_pos_y;
+	data->player_pos_y = data->player_pos_x;
+	data->player_pos_x = x;
+}
+
+void	init_exec_data(t_data *data)
+{
+	xy_swap(data);
+	data->rs = 0.78539816339 / 2;
+	data->speed = 0.40;
+	data->plane_x = data->angle.vec_y;
+	data->plane_y = -data->angle.vec_x;
 }

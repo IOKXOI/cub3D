@@ -6,7 +6,7 @@
 /*   By: sydauria <sydauria@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/07 19:07:00 by tschecro          #+#    #+#             */
-/*   Updated: 2024/02/19 12:53:30 by sydauria         ###   ########.fr       */
+/*   Updated: 2024/02/19 12:59:35 by sydauria         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,15 +46,6 @@ int	rendering(t_data *data)
 	return (0);
 }
 
-static void	xy_swap(t_data *data)
-{
-	float	x;
-
-	x = data->player_pos_y;
-	data->player_pos_y = data->player_pos_x;
-	data->player_pos_x = x;
-}
-
 int	main(int ac, char **av)
 {
 	t_data	data;
@@ -77,12 +68,7 @@ int	main(int ac, char **av)
 		destroy(&data);
 		return (false);
 	}
-	swap_exec_data(data)
-	xy_swap(&data);
-	data.rs = 0.78539816339 / 2;
-	data.speed = 0.40;
-	data.plane_x = data.angle.vec_y;
-	data.plane_y = -data.angle.vec_x;
+	init_exec_data(data)
 	mlx_loop_hook(data.mlx.mlx, rendering, &data);
 	init_hooks(&data);
 	mlx_loop(data.mlx.mlx);
