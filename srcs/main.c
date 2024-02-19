@@ -6,7 +6,7 @@
 /*   By: sydauria <sydauria@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/07 19:07:00 by tschecro          #+#    #+#             */
-/*   Updated: 2024/02/19 12:59:35 by sydauria         ###   ########.fr       */
+/*   Updated: 2024/02/19 13:01:18 by sydauria         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,7 +68,7 @@ int	main(int ac, char **av)
 		destroy(&data);
 		return (false);
 	}
-	init_exec_data(data)
+	init_exec_data(&data);
 	mlx_loop_hook(data.mlx.mlx, rendering, &data);
 	init_hooks(&data);
 	mlx_loop(data.mlx.mlx);
